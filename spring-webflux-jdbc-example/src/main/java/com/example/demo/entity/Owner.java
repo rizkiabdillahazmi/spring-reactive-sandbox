@@ -10,9 +10,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * Created by Rizki Abdillah Azmi on 13-Sep-23
+ * Created by Rizki Abdillah Azmi on 15-Sep-23
  */
-
 @Getter
 @Setter
 @Builder
@@ -20,15 +19,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class Car implements Serializable {
+public class Owner implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String color;
-    private String brand;
-    private String type;
-    private String transmission;
+    private String name;
+    private String email;
+    private String phoneNumber;
 
+    @Version
+    private Integer version;
     @CreatedDate
     private LocalDateTime createdAt;
     @LastModifiedDate
