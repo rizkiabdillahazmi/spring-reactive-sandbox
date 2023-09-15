@@ -28,6 +28,7 @@ public class Car implements Serializable {
     private String transmission;
 
     @CreationTimestamp
+    @Column(updatable = false)
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;
